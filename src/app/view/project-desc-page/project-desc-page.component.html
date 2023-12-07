@@ -1,0 +1,94 @@
+<div id="wrapper">
+  <div style="height: 130px; width: 100%;"></div>
+  <div class="left">
+    <div uk-grid>
+      <div class="uk-width-100">
+        <div id="slideshow" class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+          <ul class="uk-slideshow-items">
+            <li>
+              <img src="{{url}}{{project_data.img_1}}" alt="" uk-cover>
+            </li>
+
+            <li>
+              <img src="{{url}}{{project_data.img_2}}" alt="" uk-cover>
+            </li>
+            <li>
+              <img src="{{url}}{{project_data.img_3}}" alt="" uk-cover>
+            </li>
+            <li>
+              <img src="{{url}}{{project_data.img_4}}" alt="" uk-cover>
+            </li>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+            uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+            uk-slideshow-item="next"></a>
+        </div>
+        <div id="slider" class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
+          <ul class="uk-slider-items uk-grid uk-thumbnav">
+            <li class="uk-width-1-4" uk-slideshow-item="0">
+              <div class="uk-panel">
+                <img src="{{url}}{{project_data.img_1}}" alt="" height="100px">
+                <div class="uk-position-center uk-panel">
+                  <h1>1</h1>
+                </div>
+              </div>
+            </li>
+
+            <li class="uk-width-1-4" uk-slideshow-item="1">
+              <div class="uk-panel">
+                <img src="{{url}}{{project_data.img_2}}" alt="">
+                <div class="uk-position-center uk-panel">
+                  <h1>2</h1>
+                </div>
+              </div>
+            </li>
+            <li class="uk-width-1-4" uk-slideshow-item="2">
+              <div class="uk-panel">
+                <img src="{{url}}{{project_data.img_3}}" alt="">
+                <div class="uk-position-center uk-panel">
+                  <h1>3</h1>
+                </div>
+              </div>
+            </li>
+            <li class="uk-width-1-4" uk-slideshow-item="3">
+              <div class="uk-panel">
+                <img src="{{url}}{{project_data.img_4}}" alt="">
+                <div class="uk-position-center uk-panel">
+                  <h1>4</h1>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+            uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+            uk-slider-item="next"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="contentarea">
+      <h1><b>Deatils Of Project</b></h1>
+      <h3><b>Made</b> : {{project_data.made}}</h3>
+      <h3><b>EPC</b> : {{project_data.epc}}</h3>
+      <h3><b>Project Name</b> : {{project_data.project_name}}</h3>
+      <h3><b>Client</b> : {{project_data.client}}</h3>
+      <h3><b>Project Cost</b> : {{project_data.cost}}</h3>
+      <h3><b>Area</b> : {{project_data.area}}</h3>
+      <h3><b>consumption </b>
+        <li>Concrete</li>
+        <li>Shutline</li>
+        <li>Reinforced</li>
+      </h3>
+
+      <p><b>Description </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores rerum id expedita quia ea,
+        aliquam, et optio laboriosam provident laudantium distinctio libero. Corporis at consectetur sit temporibus
+        illum suscipit pariatur.</p>
+
+    </div>
+  </div>
+
+</div>

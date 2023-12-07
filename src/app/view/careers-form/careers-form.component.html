@@ -1,0 +1,68 @@
+<div style="height: 120px;"></div>
+<div id="main-container">
+
+  <header>
+
+    <h1 id="title">Job form</h1>
+
+    <p id="description">Fill in to apply</p>
+
+  </header>
+
+  <form id="form-container">
+
+    <!-- NAME -->
+    <div class="question-container">
+      <label id="name-label" class="question-label" for="name">Name:</label>
+      <input id="name" class="row-input" type="text" placeholder="Enter your name" required formControlName="name">
+    </div>
+
+    <!-- EMAIL -->
+    <div class="question-container">
+      <label id="email-label" class="question-label" for="email">Email:</label>
+      <input id="email" class="row-input" type="email" placeholder="Enter your email" required formControlName="email">
+    </div>
+
+    <!-- education -->
+    <div class="question-container">
+      <label id="email-label" class="question-label" for="email">Education:</label>
+      <input class="row-input" type="text" placeholder="Enter your education" required formControlName="education">
+    </div>
+
+
+
+    <!-- YEARS OF EXPERIENCE -->
+    <div class="question-container">
+      <label id="number-label" class="question-label" for="number">Years of experience (optional):</label>
+      <input id="number" class="row-input" type="number" placeholder="Enter number of years of experience" min="0"
+        max="50" formControlName="experience">
+    </div>
+
+    <!-- PROGRAMS -->
+    <div class="question-container">
+      <label id="number-label" class="question-label" for="number">Skills:</label>
+      <textarea id="number"class="big-size-input"  type="text" placeholder="Enter skills"formControlName="skills" ></textarea>
+
+    </div>
+
+    <div class="question-container">
+      <label id="number-label" class="question-label" for="number">Resume:</label>
+      <input id="number" class="row-input" type="file"  formControlName="resume" #doc (change)="document(doc.files)" >
+
+    </div>
+
+ 
+
+    <!-- COMMENTS -->
+    <!-- <div class="question-container">
+      <label class="question-label" for="comments">Additional informations:</label>
+      <textarea id="comments" class="big-size-input" placeholder="Enter other informations here..." formControlName="curent_date"></textarea>
+    </div> -->
+
+    
+    <!-- SUBMIT -->
+    <button id="submit" type="submit"  (click)="onSubmit()"  >Submit</button>
+
+  </form>
+
+</div>

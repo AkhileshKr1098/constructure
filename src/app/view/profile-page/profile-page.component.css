@@ -1,0 +1,15 @@
+#wrapper {
+    width: calc(100% - 2px);
+    height: 100%;
+    background-color: #ccc;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+}
+  
+.box {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    background-color: #fff;
+}

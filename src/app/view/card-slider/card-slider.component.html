@@ -1,0 +1,81 @@
+<div id="wrapper">
+  <div style="height: 120px; background-color: #fff;"></div>
+
+  <div id="card_area">
+
+        <div class="frame"   *ngFor="let project of project_data  let i = index"  class="frame{{i+1}}" (dblclick)="onProject(project)">
+          <div class="card_img" style="background-image: url('{{base_url+project.img_1}}');">
+       
+            <!-- <img src="{{base_url+project.PImage}}" width="100%" height="85%"> -->
+            <span>
+              <p style="color: blue; ">{{project.project_name}}</p>
+            </span>
+          </div>
+        </div>
+    
+    <!-- <div class="frame frame2" id="image2" (dblclick)="onProject(2)">
+    <div class="card_img">
+      <img src="../../../assets/card_img1.png" width="100%" height="100%">
+    </div>
+    <div class="card_text">
+      <b>Kona Express City</b>
+      <p style="color: #000;"> Kolkata, WB</p>
+    </div>
+  </div>
+
+  <div class="frame frame3" id="image3" (dblclick)="onProject(3)">
+    <div class="card_img">
+      <img src="../../../assets/card_img3.png" width="100%" height="100%">
+    </div>
+    <div class="card_text">
+      <b>Biz-Life</b>
+      <p style="color: #000;">180m high      </p>
+
+      
+    </div>
+  </div>
+
+  <div class="frame frame4" id="image4" (dblclick)="onProject(4)">
+    <div class="card_img">
+      <img src="../../../assets/card_img4.png" width="100%" height="100%">
+    </div>
+    <div class="card_text">
+      <b>Proposed NOIDA Centre</b>
+      <p style="color: #000;">240m high      </p>
+
+      
+    </div>
+  </div>
+
+  <div class="frame frame5" id="image5" (dblclick)="onProject(5)">
+    <div class="card_img">
+      <img src="../../../assets/card_img5.png" width="100%" height="100%">
+    </div>
+    <div class="card_text">
+      <b>Embassy tech village</b>
+      
+      <p style="color: #000;">Area : 35 lakh SQFT   </p>
+      
+    </div>
+  </div> 
+
+ <div class="frame frame6" id="image6" (dblclick)="onProject(6)">
+    <div class="card_img">
+      <img src="../../../assets/card_img6.png" width="100%" height="100%">
+    </div>
+    <div class="card_text">
+      <b> Proposed N2 Embassy </b>
+      <p style="color: #000;">Area : 25 lakh SQFT   </p>
+
+     
+    </div>
+  </div>  -->
+
+
+  </div>
+
+</div>
+
+<!-- 
+  <div [hidden]="!imageLoader"><img src="https://www.netatwork.com/uploads/AAPL/loaders/loading_ajax.gif"></div>
+<img [hidden]="imageLoader" src="https://www.ncsc.gov.uk/images/Online%20Shopping%20-%20Copy.png?mpwidth=545&mlwidth=737&twidth=961&dwidth=635&dpr=1&width=1366" (load)="this.imageLoader = false;" /> -->

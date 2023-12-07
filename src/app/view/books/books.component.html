@@ -1,0 +1,34 @@
+<div id="wrapper">
+    <div id="head">
+        <div class="head_left">
+            <div class="text_area">
+                <br> <br> <br>
+                <h1>+5,000 books</h1>
+                <h1 style="color: red;">in one place</h1>
+            </div>
+
+            
+            <div class="text_area">
+                <br>
+                <span><input #serch type="text" placeholder="Search Books" (keyup)="onSearch(serch.value)"> <mat-icon>search</mat-icon> </span>
+            </div>
+
+
+        </div>
+        <div class="head_right">
+            <img src="../../../assets/booksheaderimg.webp" width="100%" height="100%">
+        </div>
+    </div>
+
+    <div id="books_box">
+        <mat-card class="books" *ngFor="let books of books_data" (click)="onSingalBook(books)">
+            <div  class="img_area"><img width="100%" height="100%" src="{{url}}{{books.BookImage}}"></div>
+            <div class="text_area">
+                <b>{{books.BookTitle}}</b>
+                <p>{{books.BookWriter}}</p>
+                <p><del>{{books.MRP | currency:'INR'}}</del> &nbsp; &nbsp; &nbsp; <b>{{books.FinalPrice |
+                        currency:'INR'}}</b></p>
+            </div>
+        </mat-card>
+    </div>
+</div>

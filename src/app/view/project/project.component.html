@@ -1,0 +1,22 @@
+  <div id="wrapper">
+        <div class="project_area">
+
+        <mat-card class="project" *ngFor="let project of project_data" (click)="onProjectDesc(project)">
+        
+            <div class="image_area">
+                <div class="img_box"><img src="{{url+project.img_1}}"></div>
+                <div class="img_box"><img src="{{url+project.img_2}}"></div>
+                <div class="img_box"><img src="{{url+project.img_3}}"></div>
+                <div class="img_box"><img src="{{url+project.img_4}}"></div>
+            </div>
+            <div class="text_area">
+                <h1 ><i style="color: rgb(176, 22, 22);">{{project.cname}}</i> </h1>
+                <h1>{{project.project_name}} </h1>
+               
+            </div>
+        </mat-card>
+        </div>
+  </div>
+
+  <!-- <div [hidden]="!imageLoader"><img src="https://www.netatwork.com/uploads/AAPL/loaders/loading_ajax.gif"></div>
+<img [hidden]="imageLoader" src="https://www.ncsc.gov.uk/images/Online%20Shopping%20-%20Copy.png?mpwidth=545&mlwidth=737&twidth=961&dwidth=635&dpr=1&width=1366" (load)="this.imageLoader = false;" /> -->

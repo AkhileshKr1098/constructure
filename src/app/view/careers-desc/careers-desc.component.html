@@ -1,0 +1,23 @@
+<div id="wrapper">
+    <div style="height: 120px;"></div>
+    <div id="head">
+        <img src="../../../assets/job.webp" width="100%" height="100%">
+    </div>
+
+    <div id="desc">
+        <h1><b>Title : </b> {{carrear_des_data.job_title}}</h1>
+        <p><b>Role :</b> {{carrear_des_data.job_role}}</p>
+        <p><b>Qualification :</b> {{carrear_des_data.qualification}}</p>
+        <p><b>Skills:</b> {{carrear_des_data.skills}}</p>
+        <p><b>package:</b> {{carrear_des_data.package}}</p>
+        
+        <h1><b>Description</b></h1>
+        <p>
+            {{carrear_des_data.job_description}}
+        </p>
+
+    </div>
+        <div class="btn">
+            <button mat-raised-button color="warn" (click)="onFormOpen()" >APPLY NOW </button>
+        </div>
+</div>

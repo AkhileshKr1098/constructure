@@ -1,0 +1,14 @@
+<div style="height: 220px;"></div>
+<div id="wrapper">
+    <div style="height: 120px;"></div>
+    <div class="box" *ngFor="let data of carrear_data">
+        <div class="orange-top orange-border"></div>
+        <div class="orange-left orange-border"></div>
+        <a  class="white-card" >
+            <img src="https://s3.amazonaws.com/levelup-assets/temp/design.png" alt="Design" />
+            <p class="category">{{data.job_title}}</p>
+            <span class="CTA" (click)="carrear_desc(data)">View More </span>
+        </a>
+    </div>
+</div>
+    

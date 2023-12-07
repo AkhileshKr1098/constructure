@@ -1,0 +1,61 @@
+<div id="warpper">
+    <div id="header">
+        <div class="logo">
+            <b style="color: rgb(19, 19, 170);"> CON</b> <b
+                style="color: red;  background-color: rgba(7, 7, 80, 0.562);"> <i
+                    style="padding: 5px;">STRUCTURE</i></b>
+            <p style="color: rgb(17, 17, 128);">DESIGNS PVT. LTD</p>
+        </div>
+        <div class="menu">
+            <ul class="menu_ul">
+                <li routerLink="/home"> <button mat-button>Home</button></li>
+                <li> <button mat-button routerLink="/servies">Servies</button></li>
+                <li routerLink="/projects"> <button mat-button>Project</button></li>
+                <li routerLink="/books" > <button mat-button>Books</button></li>
+                               <li   [matMenuTriggerFor]="vertebrates"> <button mat-button >About</button></li>
+                               <mat-menu #vertebrates="matMenu">
+                                <button mat-menu-item routerLink="/ourteam"> Our Team</button>
+                                <button mat-menu-item routerLink="/about"> About us</button>
+                                <button mat-menu-item routerLink="/mission" >Mission</button>
+                                <button mat-menu-item routerLink="/vision"> Visions </button>
+                                <button mat-menu-item routerLink="/careers"> careers
+                                </button>
+                                <button mat-menu-item routerLink="/tandc"> Terms And Conditions
+                                </button>
+                
+                              </mat-menu>
+                
+
+                <li> <button mat-button routerLink="/contact">Contact</button></li>
+                <li> <button mat-button></button></li>
+                <li routerLink="/login" *ngIf="!isLogin"> <button mat-stroked-button>Login</button></li>
+                <li routerLink="/profile" *ngIf="isLogin"> <button mat-icon-button class="profile"> <mat-icon >account_box</mat-icon></button></li>
+            </ul>
+            <button mat-icon-button class="menu_bar" (click)="sidebar.toggle()">
+                <mat-icon>format_align_right</mat-icon></button>
+
+
+
+
+            <mat-sidenav #sidebar mode="side" [(opened)]="opened">
+                <ul class="mobile_menu">
+                    <li > <button mat-button></button></li>
+                    <li routerLink="/home" (click)="sidebar.toggle()"> <button mat-button  >Home</button></li>
+                    <li> <button mat-button routerLink="/servies" (click)="sidebar.toggle()">Servies</button></li>
+                    <li routerLink="/project"> <button mat-button (click)="sidebar.toggle()">Project</button></li>
+                    <li routerLink="/about"> <button mat-button (click)="sidebar.toggle()">About</button></li>
+                    <li> <button mat-button routerLink="/contact" (click)="sidebar.toggle()">Contact</button></li>
+                    <li routerLink="/login"> <button mat-stroked-button (click)="sidebar.toggle()">Login</button></li>
+                </ul> 
+            </mat-sidenav>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- <div id="d-wrapper">
+    <div class="zig-zag-bottom zig-zag-top">
+    </div>
+</div> -->

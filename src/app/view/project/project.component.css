@@ -1,0 +1,107 @@
+#wrapper {
+    width: calc(100% - 2px);
+    background-color:  whitesmoke;
+    height: auto;
+    border: 1px solid whitesmoke;
+    margin-top: 80px;
+    font-family: Roboto;
+}
+
+.project_area{
+    margin-top: 50px;
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0px auto;
+}
+
+.project{
+    width: 400px;
+    height: 520px;
+    float: left;
+    margin: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+}  
+
+  
+
+  
+  .project:hover img {
+    transform: scale(1.15);
+  }
+  
+.image_area{
+    width: 100%;
+    height: 70%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+
+}
+.image_area  .img_box{
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+
+.img_box img{
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+}
+
+.text_area{
+    width: calc(100% - 40px);
+    height:calc(30% - 40px);
+    padding: 20px;
+    color: #000000bd;
+}
+.text_area h1{
+    width: 100%;
+    text-align: center;
+}
+
+.text_area p{
+   text-align: justify;
+   font-size: 14px;
+   line-height: 20px;
+   padding: 10px;
+}
+
+@media (max-width:900px){
+    .project_area{
+        margin-top: 100px;
+    }
+    .project{
+    width: 320px;
+    height: 520px;
+    float: left;
+    margin: 10px;
+    border-radius: 20px;
+}  
+
+.text_area{
+    width: calc(100% - 40px);
+    height:calc(30% - 40px);
+    padding: 20px;
+    color: #000000bd;
+}
+.text_area h1{
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
+.text_area p{
+   text-align: justify;
+   font-size: 11px;
+   line-height: 20px;
+   padding: 10px;
+}
+
+
+}

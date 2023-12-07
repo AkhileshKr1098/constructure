@@ -1,0 +1,58 @@
+#wrapper {
+  width: calc(84%);
+  margin: 6%;
+  padding: 2%;
+  height: 800px;
+  background-color: #fff;
+
+}
+
+.left {
+  width: 70%;
+  height: 500px;
+  background-color: #fff;
+  float: left;
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
+
+
+.right {
+  width: 30%;
+  height: 500px;
+  float: left;
+}
+
+mat-card {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.btn_box {
+  width: 80%;
+  margin: 0px 10%;
+}
+
+.btn_box button {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.cart_tbl {
+  width: 80%;
+  margin: 10%;
+  
+}
+
+.cart_tbl tr {
+  width: 100%;
+  line-height: 50px;
+  font-size: 20px;
+  color: #302b2be1;
+  
+}
+
+
+/* for table */

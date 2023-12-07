@@ -1,0 +1,36 @@
+#wrapper{
+    width: 100%;
+    height: auto;
+    background-color:  whitesmoke;
+}
+#head{
+     width: 100%;
+     height: 400px;
+}
+#head img{
+     width: 100%;
+     height: 100%;
+}
+
+#desc{
+     width: 80%;
+     height: auto;
+     margin: 100px auto;
+}
+
+.btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background-color:  whitesmoke;
+
+}
+.btn  button {
+    background-color: rgb(7, 100, 7);
+    padding: 20px;
+}
+
+p{
+    text-align: justify;
+}

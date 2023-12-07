@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Constructure</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- for fontasome footer  -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- <link href="assets/css/card.css" rel="stylesheet"> -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+  <!-- for assocated   -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit-icons.min.js"></script>
+</head>
+
+
+<body class="mat-typography">
+  <app-root></app-root>
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+
+</body>
+
+</html>
+
+
+<script>
+  let imgCount = 0;
+  const data = [
+    {
+      img: '/img1.jpg',
+    },
+
+    {
+      img: './assets/img2.jpg',
+    },
+    {
+      img: './img3.jpg',
+    },
+    {
+      img: 'img4.jpg',
+
+    },
+    {
+      img: 'img5.jpg',
+
+    },
+    {
+      img: 'img6.jpg',
+
+    },
+  ];
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const frames = document.querySelectorAll('.frame');
+
+    frames.forEach((frame, index) => {
+      appendCard(frame, data[index]);
+      initCard(frame);
+    });
+  });
+
+  function appendCard(frame, data) {
+    const newCard = document.createElement('div');
+    newCard.className = 'card';
+    newCard.style.backgroundImage = `url(${data.img})`;
+    frame.appendChild(newCard);
+    imgCount++;
+  }
+
+  function initCard(frame) {
+    frame.addEventListener("pointerdown", onPointerDown);
+  }
+
+  let current = null;
+  let startX = 0,
+    startY = 0,
+    moveX = 0,
+    moveY = 0;
+  let isDragging = false;
+
+  function setTransform(x, y, deg, duration) {
+    current.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${deg}deg)`;
+    if (duration) current.style.transition = `transform ${duration}ms`;
+  }
+
+  function onPointerDown(event) {
+    current = event.currentTarget;
+    startX = event.clientX;
+    startY = event.clientY;
+    isDragging = true;
+    current.addEventListener("pointermove", onPointerMove);
+    current.addEventListener("pointerup", onPointerUp);
+    current.addEventListener("pointerleave", onPointerUp);
+  }
+
+  function onPointerMove(event) {
+    console.log(event)
+    if (!isDragging) return;
+    moveX = event.clientX - startX;
+    moveY = event.clientY - startY;
+    setTransform(moveX, moveY, (moveX / window.innerWidth) * 50, 0);
+  }
+
+  function onPointerUp() {
+    if (!isDragging) return;
+    isDragging = false;
+    current.removeEventListener("pointermove", onPointerMove);
+    current.removeEventListener("pointerup", onPointerUp);
+    current.removeEventListener("pointerleave", onPointerUp);
+    if (Math.abs(moveX) > current.clientWidth / 2) {
+      current.removeEventListener("pointerdown", onPointerDown);
+      complete();
+    } else {
+      cancel();
+    }
+  }
+
+  function complete() {
+    const flyX = (Math.abs(moveX) / moveX) * window.innerWidth * 1.3;
+    const flyY = (moveY / moveX) * flyX;
+    setTransform(flyX, flyY, (flyX / window.innerWidth) * 50, 300);
+    const prev = current;
+    const next = current.previousElementSibling;
+    if (next) initCard(next);
+    current = next;
+    appendCard(frames[frames.length - 1], data[imgCount % data.length]);
+    setTimeout(() => frames[frames.length - 1].removeChild(prev), 300);
+  }
+
+  function cancel() {
+    setTransform(0, 0, 0, 100);
+    setTimeout(() => (current.style.transition = ""), 100);
+  }
+
+  
+</script>

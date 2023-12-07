@@ -1,0 +1,60 @@
+<div id="wrapper">
+    <div style="height: 120px;"></div>
+    <div id="head">
+        <div class="left">
+            <a class="button" target="_blank" href="{{url+book_data.Book_DemooPdf}}">View Demo Book</a>
+            <div class="cover-image-container">
+                <lib-ngx-image-zoom [thumbImage]="url + book_data.BookImage" [fullImage]="url + book_data.BookImage"
+                    [magnification]="1.5" [enableScrollZoom]="true" [enableLens]="true" [lensWidth]="200"
+                    [lensHeight]="200" [enableScrollZoom]="true">
+                </lib-ngx-image-zoom>
+            </div>
+    
+        </div>
+
+        <div class="middel">
+            <div class="title"> {{book_data.BookTitle}}
+
+            </div>
+            <div class="text_area">
+                <b>Writer : </b> <br> <br>
+                <u>{{book_data.BookWriter}}</u>
+                <p> {{book_data.BookDesc}}</p>
+                <br> <br> <br>
+                <h1><b>-- Category</b> : <u>{{book_data.Bcname}}</u></h1>
+            </div>
+
+        </div>
+        <mat-card class="right">
+            <div class="sale">SALE !</div>
+            <div class="addtocard">
+                <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center">
+                    <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)">
+                        <mat-icon>{{star.icon}}</mat-icon>
+                    </div>
+
+                    <div class="prices">
+                        <del>
+                            MRP : {{book_data.MRP}}
+                        </del>
+                        <b>OFFER PRICE : {{book_data.FinalPrice}}</b>
+                    </div>
+
+                    <div class="addCard">
+                        <div class="small_btn">
+                            <button mat-icon-button color="accent" (click)="qty = qty + 1"
+                                init="qty = 1"><mat-icon>add</mat-icon></button>
+                            <!-- <input type="number" [value]="qty" #data disabled> -->
+                            
+                            <button  mat-icon-button color="warn">{{qty}}</button>
+                            <button mat-icon-button color="accent" (click)="qty = qty - 1" [disabled]="qty ==1">
+                                <mat-icon>remove</mat-icon></button>
+                        </div>
+
+                        <button class="addtocart" (click)="AddToCard()">ADD TO CART</button>
+                    </div>
+
+                </div>
+            </div>
+        </mat-card>
+    </div>

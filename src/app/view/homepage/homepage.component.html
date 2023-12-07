@@ -1,0 +1,162 @@
+<div id="wrapper">
+    <a id="downloadLink" target="_blank" href="../../../assets/Company Profile.pdf" download><button
+            id="company_profile" mat-raised-button>Company Profile </button></a>
+    <body>
+        <!-- ======= Header ======= -->
+        <header id="headersocicon" class="fixed-top d-flex ">
+            <div class="social-links m-3" style="width: 90%;   display: flex; justify-content: right; ">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </header>
+
+        <header style="margin-top: 40px;" id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-between">
+
+                <h1 class="logo"><a href="index.html">Constructure</a></h1>
+
+                <nav id="navbar" [ngClass]="onMenuToggal ? 'navbar' : 'navbar-mobile' ">
+                    <ul>
+                        <li><a class="nav-link scrollto" routerLinkActive="active" href="index.html">Home</a></li>
+                        <li><a class="nav-link scrollto" routerLinkActive="active" routerLink="/servies" (click)="onClose()">Services</a>
+                        </li>
+                        <li><a class="nav-link scrollto " routerLinkActive="active" routerLink="/projects" (click)="onClose()">Project</a>
+                        </li>
+                        
+                        <li><a class="nav-link scrollto " routerLinkActive="active" routerLink="/books" (click)="onClose()" >Books</a></li>
+                        <li class="dropdown" >
+                            <a routerLink=""terLinkActive="active"  (click)="onSubMenu()"><span>About</span> <i
+                                    class="bi bi-chevron-down"></i></a>
+                                    
+                            <ul [ngStyle]="{'display': style1 ? 'block' :  'none' }">
+                                <li><a routerLinkActive="active" routerLink="/about" (click)="onClose()" >About</a></li>
+                                <li><a routerLinkActive="active" routerLink="/design" (click)="onClose()">Design</a></li>
+                                <li><a routerLinkActive="active" routerLink="/mission" (click)="onClose()">Mission</a></li>
+                                <li><a routerLinkActive="active" routerLink="/vision" (click)="onClose()" >Vision</a></li>
+                                <li><a routerLinkActive="active" routerLink="/associate" (click)="onClose()" >Associate</a></li>
+                                <li><a routerLinkActive="active" routerLink="/organizationChart" (click)="onClose()" >Organization Chart</a></li>
+                                <li><a routerLinkActive="active" routerLink="/careers" (click)="onClose()" >Careers</a></li>
+                                <li><a routerLinkActive="active" routerLink="/privicePolices" (click)="onClose()" >Privacy Policy
+
+                                    </a></li>
+                                <!-- <li><a  routerLinkActive="active" routerLink="/projectdesc">projectdesc</a></li> -->
+                                <li><a routerLinkActive="active" routerLink="tandc" (click)="onClose()" >Term and Condatation</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li><a class="nav-link scrollto" routerLink="/contact" (click)="onClose()" >Contact</a></li>
+                        <li><a class="getstarted scrollto" routerLink="login" (click)="onClose()" >Get Started</a></li>
+
+                        <form class="example-form" id="Search" *ngIf="!SearchToggal">
+                            <input type="text"
+                                   placeholder="Search"
+                                   [formControl]="control"
+                                   [matAutocomplete]="auto"
+                                   class="example-input">
+                            <mat-autocomplete #auto="matAutocomplete">
+                             
+                         
+                                <mat-option *ngFor="let street of filteredStreets  | async; track street" value="{{street}}">{{street}} </mat-option>                            
+                            </mat-autocomplete> 
+                          </form>
+                          
+                        
+                    </ul>
+                    <i  class="bi bi-list mobile-nav-toggle" (click)="onMenu()"></i>
+                </nav><!-- .navbar -->
+
+            </div>
+        </header>
+
+
+        <div style="padding-top: 0px; ">
+            <router-outlet></router-outlet>
+        </div>
+
+
+
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-info">
+                                <h3>CONSTRUCTURE
+                                    DESIGNS PVT. LTD
+                                </h3>
+                                <p>
+                                    Abhishek Plaza, 3rd Floor
+                                    Pocket B, Mayur Vihar Phase 2
+                                    Delhi 110091<br><br>
+                                    <strong>Phone:</strong> +91.11.22776008, +91.11.22724917<br>
+                                    <strong>Email:</strong> constructure@gmail.com<br>
+                                </p>
+                                <div class="social-links mt-3">
+                                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Civil and Structural Design
+                                        Consultancy</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Detailed Project Reports</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Highway and Transportation
+                                        Engineering</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Rail and Metro
+                                    </a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Topographic surveys</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Our Newsletter</h4>
+                            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                            <form action="" method="post">
+                                <input type="email" name="email"><input type="submit" value="Subscribe">
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>CONSTRUCTURE</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
+                    Designed by <a href="https://www.macreel.co.in/">Macreel Infosoft</a>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+</body></div>

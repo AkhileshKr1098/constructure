@@ -1,0 +1,144 @@
+#wrapper {
+    width: calc(100% - 2px);
+    height: auto;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.aboutus {
+    width: 85%;
+    height: 400px;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+.aboutus .left{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.aboutus .right{
+    width:calc(50%  - 60px);
+    height: calc(100% - 60px);
+    float: right;
+    padding: 30px;
+}
+
+
+
+.head_title{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+
+    color: green;
+    letter-spacing: 1PX;
+    font-size: 30px;
+}
+.aboutus p {
+    line-height: 35px;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content {
+    padding: 30px 0;
+  }
+  
+  .about .content h3 {
+    font-weight: 700;
+    font-size: 34px;
+  }
+  
+  .about .content p {
+    margin-bottom: 0;
+  }
+  
+  .about .content .icon-box {
+    margin-top: 25px;
+  }
+  
+  .about .content .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0 10px 60px;
+  }
+  
+  .about .content .icon-box i {
+    font-size: 48px;
+    float: left;
+    color: #5c9f24;
+  }
+  
+  .about .content .icon-box p {
+    font-size: 15px;
+    color: #848484;
+    margin-left: 60px;
+  }
+  
+  .about .image {
+    /* background: url("../img/about.jpg") center center no-repeat; */
+    background-size: cover;
+    min-height: 400px;
+  }
+  
+  @media (max-width: 991px) {
+    .about .image {
+      text-align: center;
+    }
+  
+    .about .image img {
+      max-width: 80%;
+    }
+
+    .aboutus {
+        width: 100%;
+        height: 1000px;
+        margin: 20px auto;
+        font-size: 20px;
+    }
+    
+    .aboutus .left{
+        width: 100%;
+        height: 700px;
+    }
+    .aboutus .right{
+        width:100%;
+        height: auto;
+        /* padding: 30px; */
+    }
+  }
+  
+  @media (max-width: 667px) {
+    .about .image img {
+      max-width: 100%;
+    }
+
+
+    .aboutus {
+        width: 100%;
+        height: 1000px;
+        margin: 20px auto;
+        font-size: 20px;
+    }
+    
+    .aboutus .left{
+        width: 100%;
+        height: 400px;
+    }
+    .aboutus .right{
+        width:100%;
+        height: auto;
+        /* padding: 30px; */
+    }
+    
+    
+  }
+  

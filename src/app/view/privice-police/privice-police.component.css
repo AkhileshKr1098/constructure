@@ -1,0 +1,187 @@
+#wrapper {
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+}
+
+#head {
+    width: 100%;
+    height: 400px;
+    background-image: url('../../../assets/aboutimg2.jpeg');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#head h1 {
+    line-height: 150px;
+    color: #fff;
+    font-size: 4vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.h1cls {
+    width: 50%;
+    margin: 20px auto;
+    font-size: 48px;
+    color: #3c4852;
+    line-height: 60px;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    /* box-shadow: 0px 0px 10px #eafa72cc; */
+}
+
+.h1cls p {
+    font-size: 38px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+
+/* for servies box css  */
+#servies {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.servies_box {
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    float: left;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 80px #eafa72;
+}
+
+.servies_box img {
+    transition: transform .5s ease;
+}
+
+.servies_box:hover img {
+    transform: scale(1.15);
+}
+
+.servies_box h1 {
+    margin-top: 20px;
+    font-size: 1.5vw;
+    text-align: center;
+    color: #0e1b47;
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.servies_box p {
+    text-align: justify;
+}
+
+
+
+
+/* for servies box css end  here  */
+
+#content_box {
+    width: 90%;
+    margin: 80px auto;
+    height: auto;
+}
+
+#content_box h1 {
+    width: 100%;
+    text-align: left;
+    font-family: 'Allerta', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(7, 7, 90);
+
+}
+
+#content_box p {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-align: left;
+    word-spacing: 3px;
+    color: #12275f;
+    text-align: justify;
+}
+
+
+/* for mediya qure */
+@media screen and (max-width: 900px) {
+
+    h1 {
+        width: 90%;
+        margin: 00px auto;
+        font-size: 28px;
+        line-height: 40px;
+        word-spacing: 3px;
+        letter-spacing: 2px;
+
+    }
+
+    #card_box {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+
+    .box {
+        width: 300px;
+        height: calc(100% - 40PX);
+        float: left;
+        margin: 20px;
+    }
+
+    .sub_box {
+        width: 100%;
+        height: 50%;
+    }
+
+
+
+    .sub_box p {
+        padding: 20px;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        text-align: left;
+        word-spacing: 3px;
+        color: #3c4852;
+    }
+
+    #content_box {
+        height: auto;
+    }
+
+    #content_box h1 {
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+
+    }
+
+    #content_box p {
+        padding: 0PX;
+        margin-top: 30PX;
+    }
+
+    #head h1 {
+        line-height: 150px;
+        color: #fff;
+        font-size: 8vw;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+}
